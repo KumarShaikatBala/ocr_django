@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+</head>
+<body>
+    <h1>File uploaded successfully!</h1>
+    <p>Your document is being processed.</p>
+<!-- Add this to the success page -->
+<p>View your document: <a href="{% url 'document_detail' doc_id=document.id %}">Click here</a></p>
+</body>
+</html>

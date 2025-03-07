@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Details</title>
+</head>
+<body>
+    <h1>Document Details</h1>
+    <p><strong>File:</strong> {{ document.file.name }}</p>
+    <p><strong>Status:</strong> {{ document.status }}</p>
+    <p><strong>Uploaded At:</strong> {{ document.uploaded_at }}</p>
+
+    {% if document.status == 'completed' %}
+    <h2>Extracted Text:</h2>
+    <pre>{{ document.text }}</pre>
+    {% elif document.status == 'failed' %}
+    <p class="error">Error processing document</p>
+    {% else %}
+    <p>Document processing in progress...</p>
+    {% endif %}
+
+    <a href="/">Upload another file</a>
+</body>
+</html>
